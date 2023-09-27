@@ -39,6 +39,7 @@ set.list = true
 set.listchars:append("space:⋅")
 set.listchars:append("eol:↴")
 
+set.encoding = "UTF-8"
 -- Colorscheme
 -- vim.cmd([[colorscheme gruvbox-material]])
 
