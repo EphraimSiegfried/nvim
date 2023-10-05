@@ -35,9 +35,9 @@ set.linebreak = true
 -- set.wrapmargin = 60
 
 -- for indent-blankline plugin
-set.list = true
-set.listchars:append("space:⋅")
-set.listchars:append("eol:↴")
+-- set.list = true
+-- set.listchars:append("space:⋅")
+-- set.listchars:append("eol:↴")
 
 set.encoding = "UTF-8"
 -- Colorscheme
