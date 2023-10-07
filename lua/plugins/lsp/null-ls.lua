@@ -27,6 +27,7 @@ return {
 				formatting.black,
 				formatting.latexindent,
 				formatting.markdownlint,
+				formatting.clang_format,
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)
