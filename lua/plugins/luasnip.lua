@@ -8,8 +8,15 @@ return {
 				store_selection_keys = "<Tab>",
 				region_check_events = "InsertEnter",
 				delete_check_events = "InsertLeave",
+				-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+				require("luasnip.loaders.from_vscode").lazy_load({
+					include = { "lua", "markdown", "python", "c" },
+				}),
 			})
 		end,
+	},
+	{
+		"rafamadriz/friendly-snippets",
 	},
 	{
 		"iurimateus/luasnip-latex-snippets.nvim",
