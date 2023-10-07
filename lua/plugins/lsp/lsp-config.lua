@@ -120,6 +120,10 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
+
+		-- configure c server
+		lspconfig["clangd"].setup({})
+
 		--configure yaml/json server
 		lspconfig["spectral"].setup({})
 
