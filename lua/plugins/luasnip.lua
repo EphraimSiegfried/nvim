@@ -12,6 +12,7 @@ return {
 				require("luasnip.loaders.from_vscode").lazy_load({
 					include = { "lua", "markdown", "python", "c" },
 				}),
+				require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" }),
 			})
 		end,
 	},
