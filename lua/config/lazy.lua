@@ -18,6 +18,7 @@ require("lazy").setup({
 	{ import = "plugins.lsp" },
 	{ import = "plugins.writing" },
 	{ import = "plugins.colorschemes" },
+	{ import = "plugins.dap" },
 }, {
 	checker = {
 		enabled = true,
