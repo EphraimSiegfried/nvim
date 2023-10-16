@@ -129,6 +129,17 @@ return {
 
 		-- configure latex servers
 		lspconfig["texlab"].setup({})
+		-- require("lspconfig.server_configurations.texlab").default_config.settings = {
+		-- 	texlab = {
+		-- 		diagnostics = {
+		-- 			ignoredPatterns = { "Undefined" },
+		-- 		},
+		-- 		chktex = {
+		-- 			onEdit = false,
+		-- 			onOpenAndSave = false,
+		-- 		},
+		-- 	},
+		-- }
 
 		lspconfig["ltex"].setup({
 			capabilities = capabilities,

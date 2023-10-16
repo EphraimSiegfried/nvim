@@ -7,7 +7,8 @@ return {
         let g:vimtex_general_viewer="sioyek"
         set conceallevel=1
         let g:tex_conceal="abdmg"
-        let g:vimtex_quickfix_ignore_all_warnings=1
+        " let g:vimtex_quickfix_ignore_filters = ['Undefined reference']
+        " let g:vimtex_log_ignore = ['Undefined reference']
         ]])
 	end,
 }
