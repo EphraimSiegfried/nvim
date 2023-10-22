@@ -31,10 +31,22 @@ local fmta = require("luasnip.extras.fmt").fmta
 
 return {
 	s(
-		{ trig = "vgl.", snippetType = "autosnippet" },
+		{ trig = "vgl", snippetType = "autosnippet" },
 		fmta(
 			[[
       \footcite[Vgl.][S.<>]{<>}
+      ]],
+			{
+				i(1),
+				i(2),
+			}
+		)
+	),
+	s(
+		{ trig = "cite", snippetType = "autosnippet" },
+		fmta(
+			[[
+      \footcite[S.<>]{<>}
       ]],
 			{
 				i(1),
