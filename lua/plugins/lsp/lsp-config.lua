@@ -122,7 +122,12 @@ return {
 		})
 
 		-- configure c server
-		lspconfig["clangd"].setup({})
+		-- Pasted from https://www.reddit.com/r/neovim/comments/wmj8kb/i_have_nullls_and_clangd_attached_to_a_buffer_c/
+		local c_capabilities = vim.lsp.protocol.make_client_capabilities()
+		c_capabilities.offsetEncoding = "utf-8"
+		lspconfig["clangd"].setup({
+			capabilities = c_capabilities,
+		})
 
 		--configure yaml/json server
 		lspconfig["spectral"].setup({})
