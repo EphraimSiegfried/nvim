@@ -1,5 +1,9 @@
 return {
 	"folke/zen-mode.nvim",
-	lazy = true,
-	opts = {},
+	opts = {
+		plugins = {
+			kitty = { enabled = true },
+			twilight = { enabled = false },
+		},
+	},
 }
