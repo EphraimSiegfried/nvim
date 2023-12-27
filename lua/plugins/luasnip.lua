@@ -10,7 +10,7 @@ return {
 				delete_check_events = "InsertLeave",
 				-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 				require("luasnip.loaders.from_vscode").lazy_load({
-					include = { "lua", "markdown", "md", "python", "c" },
+					include = { "lua", "markdown", "md", "python", "c", "typescript", "javascript", "react" },
 				}),
 				require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets" }),
 			})
