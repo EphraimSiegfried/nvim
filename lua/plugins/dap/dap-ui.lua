@@ -1,5 +1,6 @@
 return {
 	"rcarriga/nvim-dap-ui",
+	event = { "BufRead", "BufNewFile" },
 	after = "nvim-dap",
 	config = function()
 		local dap = require("dap")

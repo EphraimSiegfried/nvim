@@ -3,6 +3,7 @@ local M = {}
 function M.plugin()
 	return {
 		"mfussenegger/nvim-dap-python",
+		ft = "python",
 		after = "nvim-dap",
 		config = function()
 			local DEBUGPY_PATH = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python3"

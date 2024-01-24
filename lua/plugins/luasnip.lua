@@ -1,6 +1,7 @@
 return {
 	{
 		"L3MON4D3/LuaSnip",
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("luasnip").config.set_config({
 				history = false,
@@ -27,6 +28,7 @@ return {
 	},
 	{
 		"benfowler/telescope-luasnip.nvim",
+		event = "VeryLazy",
 		config = true,
 	},
 }

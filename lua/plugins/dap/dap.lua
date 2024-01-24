@@ -14,6 +14,7 @@ end)
 
 return {
 	"mfussenegger/nvim-dap",
+	event = { "BufRead", "BufNewFile" },
 	lazy = true,
 	debugpy.plugin(),
 
