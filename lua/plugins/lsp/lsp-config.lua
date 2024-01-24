@@ -61,7 +61,6 @@ return {
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
-
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
@@ -123,17 +122,35 @@ return {
 
 		-- configure c server
 		-- Pasted from https://www.reddit.com/r/neovim/comments/wmj8kb/i_have_nullls_and_clangd_attached_to_a_buffer_c/
-		local c_capabilities = vim.lsp.protocol.make_client_capabilities()
-		c_capabilities.offsetEncoding = "utf-8"
-		lspconfig["clangd"].setup({
-			capabilities = c_capabilities,
-		})
+		-- local c_capabilities = vim.lsp.protocol.make_client_capabilities()
+		-- c_capabilities.offsetEncoding = "utf-8"
+		-- lspconfig["clangd"].setup({
+		-- 	capabilities = c_capabilities,
+		-- })
 
+		-- C++ Platformio
+		-- lspconfig["ccls"].setup({ lsp = { use_defaults = true } })
 		--configure yaml/json server
 		lspconfig["spectral"].setup({})
 
 		-- configure latex servers
-		lspconfig["texlab"].setup({})
+		-- lspconfig["texlab"].setup()
+		lspconfig.ccls.setup({
+			init_options = {
+				compilationDatabaseDirectory = "build",
+				index = {
+					threads = 0,
+				},
+				clang = {
+					excludeArgs = { "-frounding-math" },
+				},
+				cache = {
+					directory = "~/Library/Caches/ccls",
+				},
+			},
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
 		-- require("lspconfig.server_configurations.texlab").default_config.settings = {
 		-- 	texlab = {
 		-- 		diagnostics = {
