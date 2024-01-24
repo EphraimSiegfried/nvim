@@ -28,6 +28,9 @@ set.relativenumber = true -- lines have relative numbers
 set.number = true -- current line shows absolute number
 set.cursorline = true -- highlight the current line
 
+--folding
+set.foldmethod = "indent"
+
 -- wrapping settings
 set.wrap = true
 set.linebreak = true
