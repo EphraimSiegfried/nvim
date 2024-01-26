@@ -29,7 +29,7 @@ set.number = true -- current line shows absolute number
 set.cursorline = true -- highlight the current line
 
 --folding
-set.foldmethod = "indent"
+-- set.foldmethod = "indent"
 
 -- wrapping settings
 set.wrap = true
