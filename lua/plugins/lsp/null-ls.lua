@@ -16,10 +16,12 @@ return {
 
 		-- configure null_ls
 		null_ls.setup({
+			-- Uncomment the following three lines for platformio development TODO:fix
+			-- on_init = function(new_client, _)
+			-- 	new_client.offset_encoding = "utf-32"
+			-- end,
+
 			-- add package.json as identifier for root (for typescript monorepos)
-			on_init = function(new_client, _)
-				new_client.offset_encoding = "utf-32"
-			end,
 			root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 			-- setup formatters & linters
 			sources = {
