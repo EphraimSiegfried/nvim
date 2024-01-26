@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+		"folke/neodev.nvim",
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -22,11 +23,12 @@ return {
 			opts.desc = "Show LSP references"
 			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
-			opts.desc = "Go to declaration"
-			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-
-			opts.desc = "Show LSP definitions"
-			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+			-- Following was replaced with https://github.com/KostkaBrukowa/definition-or-references.nvim
+			-- opts.desc = "Go to declaration"
+			-- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			--
+			-- opts.desc = "Show LSP definitions"
+			-- keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
 			opts.desc = "Show LSP implementations"
 			keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
@@ -122,19 +124,14 @@ return {
 
 		-- configure c server
 		-- Pasted from https://www.reddit.com/r/neovim/comments/wmj8kb/i_have_nullls_and_clangd_attached_to_a_buffer_c/
-		-- local c_capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- c_capabilities.offsetEncoding = "utf-8"
-		-- lspconfig["clangd"].setup({
-		-- 	capabilities = c_capabilities,
-		-- })
+		local c_capabilities = vim.lsp.protocol.make_client_capabilities()
+		c_capabilities.offsetEncoding = "utf-8"
+		lspconfig["clangd"].setup({
+			capabilities = c_capabilities,
+		})
 
 		-- C++ Platformio
 		-- lspconfig["ccls"].setup({ lsp = { use_defaults = true } })
-		--configure yaml/json server
-		lspconfig["spectral"].setup({})
-
-		-- configure latex servers
-		-- lspconfig["texlab"].setup()
 		lspconfig.ccls.setup({
 			init_options = {
 				compilationDatabaseDirectory = "build",
@@ -151,6 +148,12 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
+
+		--configure yaml/json server
+		lspconfig["spectral"].setup({})
+
+		-- configure latex servers
+		-- lspconfig["texlab"].setup()
 		-- require("lspconfig.server_configurations.texlab").default_config.settings = {
 		-- 	texlab = {
 		-- 		diagnostics = {
