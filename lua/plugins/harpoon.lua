@@ -13,8 +13,16 @@ return {
 		keymap.set("n", "<Tab>", function()
 			require("harpoon.ui").nav_next()
 		end)
-		keymap.set("n", "<S-<Tab>>", function()
+		keymap.set("n", "<S-Tab>", function()
 			require("harpoon.ui").nav_prev()
 		end)
+		-- keymap.set("n", "<leader>hx", function()
+		-- 	require("harpoon.cmd-ui").toggle_quick_menu()
+		-- end)
+		-- for termNum = 1, 9, 1 do
+		-- 	keymap.set("n", "<leader>x" .. termNum, function()
+		-- 		require("harpoon.term").gotoTerminal(termNum)
+		-- 	end)
+		-- end
 	end,
 }
