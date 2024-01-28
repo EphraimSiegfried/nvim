@@ -1,6 +1,6 @@
 return {
 	"abecodes/tabout.nvim",
-	event = { "BufRead", "BufNewFile" },
+	event = { "InsertEnter" },
 	config = function()
 		require("tabout").setup({
 			tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
