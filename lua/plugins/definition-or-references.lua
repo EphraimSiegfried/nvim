@@ -1,6 +1,14 @@
 return {
 	"KostkaBrukowa/definition-or-references.nvim",
-	event = { "BufRead", "BufNewFile" },
+	keys = {
+		{
+			"gd",
+			function()
+				require("definition-or-references").definition_or_references()
+			end,
+			desc = "Jump to definition or reference",
+		},
+	},
 	config = function()
 		require("definition-or-references").setup({
 			on_references_result = function(result)
@@ -16,6 +24,5 @@ return {
 					:find()
 			end,
 		})
-		vim.keymap.set("n", "gd", require("definition-or-references").definition_or_references, { silent = true })
 	end,
 }

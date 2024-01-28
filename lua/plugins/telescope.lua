@@ -2,6 +2,17 @@ return {
 	"nvim-telescope/telescope.nvim",
 	event = "VimEnter",
 	branch = "0.1.x",
+	keys = {
+		{
+			"<leader>ff",
+			"<cmd>Telescope find_files<cr>",
+			desc = "Fuzzy find files in cwd",
+		},
+		{ "<leader>fs", "<cmd>Telescope live_grep<cr>", desc = "Find string in cwd" },
+		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
+		{ "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
+		{ "<leader>fls", "<cmd>Telescope luasnip<cr>", desc = "Find Snippet" },
+	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -27,14 +38,7 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("luasnip")
 
-		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
-
-		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-		keymap.set("n", "<leader>fls", "<cmd>Telescope luasnip<cr>", { desc = "Find Snippet" })
+		-- disable folding in telescope
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = "TelescopeResults",
 			command = "setlocal nofoldenable",
