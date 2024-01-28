@@ -1,6 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
-	requires = "nvim-lua/plenary.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	event = "VeryLazy",
 	config = function()
 		local keymap = vim.keymap -- for conciseness

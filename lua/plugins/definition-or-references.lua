@@ -1,6 +1,6 @@
 return {
 	"KostkaBrukowa/definition-or-references.nvim",
-	events = { "BufRead", "BufNewFile" },
+	event = { "BufRead", "BufNewFile" },
 	config = function()
 		require("definition-or-references").setup({
 			on_references_result = function(result)

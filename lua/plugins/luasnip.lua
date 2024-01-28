@@ -23,7 +23,7 @@ return {
 	{
 		"iurimateus/luasnip-latex-snippets.nvim",
 		ft = { "latex", "tex" },
-		requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
+		dependencies = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
 		config = true,
 	},
 	{
