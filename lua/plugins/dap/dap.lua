@@ -4,18 +4,23 @@ local cpptools = require("plugins.dap.adapters.cpptools")
 -- Adapter Setups
 local debugpy = require("plugins.dap.adapters.debugpy")
 
--- Keymaps TODO: PRETTIER SOLUTION
-vim.keymap.set("n", "<Leader>dc", function()
-	require("dap").continue()
-end)
-vim.keymap.set("n", "<Leader>db", function()
-	require("dap").toggle_breakpoint()
-end)
-
 return {
 	"mfussenegger/nvim-dap",
-	event = { "BufRead", "BufNewFile" },
-	lazy = true,
+	keys = {
+		{
+			"<Leader>dc",
+			function()
+				require("dap").continue()
+			end,
+			desc = "Start or continue debugging",
+		},
+		"<Leader>db",
+		function()
+			require("dap").toggle_breakpoint()
+		end,
+		desc = "Toggle Breakpoint",
+	},
+
 	debugpy.plugin(),
 
 	config = function()
