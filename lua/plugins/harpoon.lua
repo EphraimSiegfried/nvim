@@ -10,7 +10,7 @@ return {
 			desc = "Add current file to harpoon list",
 		},
 		{
-			"<leader>fh",
+			"<leader>H",
 			function()
 				require("harpoon.ui").toggle_quick_menu()
 			end,
