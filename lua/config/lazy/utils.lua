@@ -16,7 +16,7 @@ function M.bootstrap()
 end
 
 function M.generate_import_specs()
-	local specs = { { import = "plugins" } }
+	local specs = {}
 
 	local function add_specs_from_dir(path)
 		local uv = vim.loop
