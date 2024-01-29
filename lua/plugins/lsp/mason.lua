@@ -43,6 +43,7 @@ return {
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true,
+			handlers = {},
 		},
 	},
 	config = function(_, opts)

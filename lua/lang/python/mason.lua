@@ -6,7 +6,7 @@ return {
 			ensure_installed = { "pyright" },
 		},
 		mason_null_ls = {
-			ensure_installed = { "black" },
+			ensure_installed = { "black", "isort" },
 		},
 	},
 }
