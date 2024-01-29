@@ -3,7 +3,10 @@ return {
 	opts = {
 		mason_lspconfig = {
 			-- gets auto configured by lsp-zero
-			ensure_installed = { "jsonls" },
+			ensure_installed = { "pyright" },
+		},
+		mason_null_ls = {
+			ensure_installed = { "black" },
 		},
 	},
 }
