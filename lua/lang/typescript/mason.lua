@@ -6,7 +6,7 @@ return {
 			ensure_installed = { "tsserver" },
 		},
 		mason_null_ls = {
-			ensure_installed = { "prettier" },
+			ensure_installed = { "prettier", "eslint_d" },
 		},
 	},
 }
