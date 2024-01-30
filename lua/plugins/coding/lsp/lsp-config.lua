@@ -13,6 +13,8 @@ return {
 		lsp_zero.extend_lspconfig()
 
 		lsp_zero.on_attach(function(client, bufnr)
+			-- client.server_capabilities.documentFormattingProvider = false
+			-- client.server_capabilities.documentFormattingRangeProvider = false
 			local opts = { buffer = bufnr, remap = false }
 			local map = vim.keymap.set
 			opts.desc = "See available code actions"
