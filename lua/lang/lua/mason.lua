@@ -2,11 +2,29 @@ return {
 	"williamboman/mason.nvim",
 	opts = {
 		mason_lspconfig = {
-			-- gets auto configured by lsp-zero
 			ensure_installed = { "luals" },
 			handlers = {
-				-- luals = require("lspconfig").lua_ls.setup(require("lsp-zero").nvim_lua_ls()),
-				luals = require("lsp-zero").noop(),
+				require("lsp-zero").default_setup,
+				lua_ls = function()
+					require("lspconfig").lua_ls.setup({
+						settings = { -- custom settings for lua
+							Lua = {
+								-- make the language server recognize "vim" global
+								diagnostics = {
+									globals = { "vim" },
+								},
+								workspace = {
+									-- make language server aware of runtime files
+									library = {
+										[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+										[vim.fn.stdpath("config") .. "/lua"] = true,
+									},
+								},
+							},
+						},
+					})
+				end,
+				-- luals = require("lsp-zero").noop(),
 			},
 		},
 		mason_null_ls = {
