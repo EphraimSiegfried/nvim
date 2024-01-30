@@ -6,14 +6,21 @@ return {
 		"hrsh7th/cmp-path", -- source for file system paths
 		"L3MON4D3/LuaSnip", -- snippet engine
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
+		"onsails/lspkind.nvim",
 	},
 	config = function()
 		local lsp_zero = require("lsp-zero")
+		local lspkind = require("lspkind")
 		lsp_zero.extend_cmp()
 		local cmp_action = lsp_zero.cmp_action()
 		local cmp = require("cmp")
 		cmp.setup({
-			formatting = lsp_zero.cmp_format(),
+			formatting = {
+				format = lspkind.cmp_format({
+					maxwidth = 50,
+					ellipsis_char = "...",
+				}),
+			},
 			mapping = cmp.mapping.preset.insert({
 				["C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
