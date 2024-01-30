@@ -7,7 +7,6 @@ return {
 			doc_lines = 10,
 			hint_enable = true,
 			toggle_key = "<C-d>",
-			transparency = 80,
 		})
 	end,
 }
