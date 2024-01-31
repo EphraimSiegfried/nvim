@@ -19,5 +19,9 @@ return {
 		mason_null_ls = {
 			ensure_installed = { "clang_format" },
 		},
+		mason_dap = {
+			-- Had to install gdb for it to work and follow this tut https://sourceware.org/gdb/wiki/PermissionsDarwin
+			ensure_installed = { "cppdbg" },
+		},
 	},
 }
