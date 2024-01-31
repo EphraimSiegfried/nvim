@@ -8,5 +8,8 @@ return {
 		mason_null_ls = {
 			ensure_installed = { "black", "isort" },
 		},
+		mason_dap = {
+			ensure_installed = { "debugpy" },
+		},
 	},
 }
