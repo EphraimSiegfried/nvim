@@ -1,15 +1,13 @@
 return {
 	"williamboman/mason.nvim",
-	opts = {
-		mason_lspconfig = {
-			-- gets auto configured by lsp-zero
-			ensure_installed = { "pyright" },
-		},
-		mason_null_ls = {
-			ensure_installed = { "black", "isort" },
-		},
-		mason_dap = {
-			ensure_installed = { "debugpy" },
-		},
-	},
+	opts = function(_, opts)
+		local lsp = opts.mason_lspconfig
+		local null_ls = opts.mason_null_ls
+		local dap = opts.mason_dap
+		local extend = vim.list_extend
+
+		extend(lsp.ensure_installed, { "pyright" })
+		extend(null_ls.ensure_installed, { "black", "isort" })
+		extend(dap.ensure_installed, { "debugpy" })
+	end,
 }

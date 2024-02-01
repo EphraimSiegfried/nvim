@@ -25,16 +25,20 @@ function M.generate_import_specs()
 			return
 		end
 		for _, stat in ipairs(stats) do
+			-- print(stat.name)
 			if stat.type == "directory" then
 				local new_import_path = path .. "/" .. stat.name
 				table.insert(specs, { import = new_import_path:gsub("/", ".") })
 				add_specs_from_dir(new_import_path)
+			elseif stat.name == "init.lua" then
+				table.remove(specs) -- removes last element
 			end
 		end
 	end
 
 	add_specs_from_dir("plugins")
 	add_specs_from_dir("lang")
+	-- print(vim.inspect(specs))
 
 	return specs
 end

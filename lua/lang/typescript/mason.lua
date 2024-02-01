@@ -1,12 +1,11 @@
 return {
 	"williamboman/mason.nvim",
-	opts = {
-		mason_lspconfig = {
-			-- gets auto configured by lsp-zero
-			ensure_installed = { "tsserver" },
-		},
-		mason_null_ls = {
-			ensure_installed = { "prettier", "eslint_d" },
-		},
-	},
+	opts = function(_, opts)
+		local lsp = opts.mason_lspconfig
+		local null_ls = opts.mason_null_ls
+		local extend = vim.list_extend
+
+		extend(lsp.ensure_installed, { "tsserver" })
+		extend(null_ls.ensure_installed, { "prettier", "eslint_d" })
+	end,
 }
