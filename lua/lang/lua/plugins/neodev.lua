@@ -1,5 +1,5 @@
 return {
-	"fole/neodev.nvim",
+	"folke/neodev.nvim",
 	opts = {},
 	config = true,
 }
