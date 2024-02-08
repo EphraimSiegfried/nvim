@@ -12,7 +12,7 @@ return {
 				require("lspconfig").clangd.setup({
 					cmd = { "clangd" },
 					capabilities = {
-						offsetEncoding = "utf-16",
+						offsetEncoding = "utf-8",
 					},
 				})
 			end,
