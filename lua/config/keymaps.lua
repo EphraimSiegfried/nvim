@@ -30,7 +30,8 @@ map("n", "<C-b>", "<C-b>zz", {})
 map("n", "<C-f>", "<C-f>zz", {})
 
 -- Jump to previous buffer/position
-map("n", "<BS>", "<C-o>", {})
+map("n", "H", "<C-o>", {})
+map("n", "L", "<C-o>", {})
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
