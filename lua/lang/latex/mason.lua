@@ -24,6 +24,5 @@ return {
 				})
 			end,
 		})
-		extend(null_ls.ensure_installed, { "latexindent" })
 	end,
 }
