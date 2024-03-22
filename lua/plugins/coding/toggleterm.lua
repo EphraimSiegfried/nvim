@@ -3,7 +3,7 @@ return {
 
 	keys = {
 		{ "<C-x>", "<cmd>ToggleTerm<cr>", desc = "Toggle the terminal" },
-		{ "<leader>g", "<cmd>lua _lazygit_toggle()<cr>", desc = "Toggle the terminal" },
+		{ "<leader>g", "<cmd>lua _lazygit_toggle()<cr>", desc = "Open lazygit" },
 	},
 
 	config = function()
