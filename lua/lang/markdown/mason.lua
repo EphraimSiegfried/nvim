@@ -6,6 +6,6 @@ return {
 		-- local dap = opts.mason_dap
 		local extend = vim.list_extend
 
-		extend(null_ls.ensure_installed, { "markdownlint" })
+		-- extend(null_ls.ensure_installed, { "markdownlint" })
 	end,
 }
