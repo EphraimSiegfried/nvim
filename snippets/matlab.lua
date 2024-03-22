@@ -194,7 +194,7 @@ return {
 		)
 	),
 	s(
-		{ trig = "textblock" },
+		{ trig = "text" },
 		fmta(
 			[[
       %% <>
@@ -207,7 +207,7 @@ return {
 		)
 	),
 	s(
-		{ trig = "codeblock" },
+		{ trig = "code" },
 		fmta(
 			[[
       %% <>
