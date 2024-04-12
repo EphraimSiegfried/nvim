@@ -19,5 +19,12 @@ return {
 		})
 		extend(null_ls.ensure_installed, { "clang_format" })
 		extend(dap.ensure_installed, { "cppdbg" })
+		vim.tbl_extend("force", null_ls.handlers, {
+			clang_format = function(source_name, methods)
+				require("null-ls").builtins.formatting.clang_format.with({
+					extra_args = { "--offset=utf-8" },
+				})
+			end,
+		})
 	end,
 }
