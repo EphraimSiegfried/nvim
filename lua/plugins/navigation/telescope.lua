@@ -12,6 +12,7 @@ return {
 		{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
 		{ "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Find Keybinding" },
 		{ "<leader>fb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
+		{ "<leader>fc", "<cmd>Telescope colorscheme<cr>", desc = "Select colorscheme" },
 		{ "<leader>fls", "<cmd>Telescope luasnip<cr>", desc = "Find Snippet" },
 	},
 	dependencies = {
@@ -32,6 +33,11 @@ return {
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
+				},
+			},
+			pickers = {
+				colorscheme = {
+					enable_preview = true,
 				},
 			},
 		})
