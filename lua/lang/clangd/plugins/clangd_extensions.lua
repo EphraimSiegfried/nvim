@@ -1,5 +1,15 @@
 return {
 	"p00f/clangd_extensions.nvim",
+	-- ft = { "c", "cpp", "h" },
+	keys = {
+		{
+			"<leader><Tab>",
+			function()
+				require("clangd_extensions.switch_source_header").switch_source_header()
+			end,
+			desc = "switch between source and header",
+		},
+	},
 	-- lazy = true,
 	-- config = function() end,
 	-- opts = {
