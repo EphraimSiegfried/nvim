@@ -35,3 +35,11 @@ map("n", "L", "<C-o>", {})
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
+map("n", "M", function()
+	local search_term = vim.fn.expand("<cword>")
+	local ok = pcall(vim.cmd, ":vertical Man " .. search_term)
+	if not ok then
+		vim.api.nvim_notify("No man entry for " .. search_term, vim.log.levels.ERROR, {})
+	end
+end, { desc = "Open man page for word under cursor" })
